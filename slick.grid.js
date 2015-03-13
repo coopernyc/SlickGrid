@@ -1204,6 +1204,7 @@ if (typeof Slick === "undefined") {
         removeCssRules();
         createCssRules();
         resizeCanvas();
+        applyColumnHeaderWidths();
         applyColumnWidths();
         handleScroll();
       }
@@ -1600,9 +1601,9 @@ if (typeof Slick === "undefined") {
       // this helps avoid redundant calls to .removeRow() when the size of the data decreased by thousands of rows
       var l = options.enableAddRow ? dataLength : dataLength - 1;
       for (var i in rowsCache) {
-        if (i >= l) {
+        //if (i >= l) {
           removeRowFromCache(i);
-        }
+        //}
       }
 
       if (activeCellNode && activeRow > l) {
